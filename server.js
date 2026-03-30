@@ -8,7 +8,14 @@ connectDB();
 const userRouter = require("./routes/userRoutes");
 const customerRouter = require("./routes/customerRoutes");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://tailor-management-system-beta.vercel.app",
+      "http://localhost:5173",
+    ],
+  }),
+);
 app.use(express.json());
 
 // Routes
